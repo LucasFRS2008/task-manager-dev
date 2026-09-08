@@ -72,34 +72,6 @@ Durante o desenvolvimento foram utilizados conceitos fundamentais do React e Jav
 
 O código também possui comentários nas partes relacionadas aos Hooks, métodos de array e callbacks, conforme solicitado na atividade.
 
-## Como executar o projeto
-
-Clone o repositório:
-
-```bash
-git clone https://github.com/LucasFRS2008/task-manager-dev.git
-```
-
-Entre na pasta do projeto:
-
-```bash
-cd task-manager-dev
-```
-
-Instale as dependências:
-
-```bash
-npm install
-```
-
-Execute o projeto:
-
-```bash
-npm run dev
-```
-
-Após executar o comando, acesse no navegador o endereço informado pelo Vite.
-
 ## Projeto acadêmico
 
 Projeto desenvolvido para a **FIAP** como atividade acadêmica utilizando React + Vite + CSS.
