@@ -44,18 +44,15 @@ function App() {
     );
   };
 
-  // filter() cria uma nova lista de acordo com o filtro
-  const filteredTasks = tasks.filter((task) => {
-    if (filter === 'pendentes') {
-      return !task.concluida;
-    }
+ // filter() cria uma nova lista de acordo com o filtro
+const filteredTasks = tasks.filter((task) => {
+  if (filter === 'concluidas') {
+    return task.concluida;
+  }
 
-    if (filter === 'concluidas') {
-      return task.concluida;
-    }
-
-    return true;
-  });
+  // Todas e Pendentes mostram apenas tarefas não concluídas
+  return !task.concluida;
+});
 
   return (
     <div className="app-container">
