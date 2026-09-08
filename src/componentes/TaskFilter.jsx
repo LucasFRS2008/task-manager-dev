@@ -1,24 +1,23 @@
-```jsx
 function TaskFilter({ currentFilter, onChangeFilter }) {
   return (
-    <div className="task-filter">
+    <div className="filter-buttons">
       <button
-        className={currentFilter === "todas" ? "active" : ""}
-        onClick={() => onChangeFilter("todas")}
+        className={currentFilter === 'todas' ? 'active' : ''}
+        onClick={() => onChangeFilter('todas')}
       >
         Todas
       </button>
 
       <button
-        className={currentFilter === "pendentes" ? "active" : ""}
-        onClick={() => onChangeFilter("pendentes")}
+        className={currentFilter === 'pendentes' ? 'active' : ''}
+        onClick={() => onChangeFilter('pendentes')}
       >
         Pendentes
       </button>
 
       <button
-        className={currentFilter === "concluidas" ? "active" : ""}
-        onClick={() => onChangeFilter("concluidas")}
+        className={currentFilter === 'concluidas' ? 'active' : ''}
+        onClick={() => onChangeFilter('concluidas')}
       >
         Concluídas
       </button>
@@ -27,4 +26,3 @@ function TaskFilter({ currentFilter, onChangeFilter }) {
 }
 
 export default TaskFilter;
-```

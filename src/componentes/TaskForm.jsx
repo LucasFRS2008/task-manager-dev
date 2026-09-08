@@ -1,71 +1,88 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 function TaskForm({ onAddTask }) {
-  const [name, setName] = useState("");
-  const [date, setDate] = useState("");
-  const [description, setDescription] = useState("");
-  const [priority, setPriority] = useState("Média");
+  const [nome, setNome] = useState('');
+  const [data, setData] = useState('');
+  const [descricao, setDescricao] = useState('');
+  const [prioridade, setPrioridade] = useState('Média');
 
   // Callback executado quando o formulário é enviado
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if (!name || !date || !description) {
-      alert("Preencha todos os campos!");
+    if (!nome.trim() || !data) {
       return;
     }
 
     const newTask = {
       id: Date.now(),
-      name,
-      date,
-      description,
-      priority,
-      completed: false,
+      nome,
+      data,
+      descricao,
+      prioridade,
+      concluida: false,
     };
 
     onAddTask(newTask);
 
-    setName("");
-    setDate("");
-    setDescription("");
-    setPriority("Média");
+    setNome('');
+    setData('');
+    setDescricao('');
+    setPrioridade('Média');
   };
 
   return (
     <form className="task-form" onSubmit={handleSubmit}>
-      <h2>Nova tarefa</h2>
+      <h2>Nova Tarefa de Dev</h2>
 
-      <input
-        type="text"
-        placeholder="Nome da tarefa"
-        value={name}
-        onChange={(event) => setName(event.target.value)}
-      />
+      <div className="form-group">
+        <label>Nome da Tarefa:</label>
 
-      <input
-        type="date"
-        value={date}
-        onChange={(event) => setDate(event.target.value)}
-      />
+        <input
+          type="text"
+          value={nome}
+          onChange={(event) => setNome(event.target.value)}
+          placeholder="Ex: Corrigir bug no login"
+          required
+        />
+      </div>
 
-      <textarea
-        placeholder="Descrição da tarefa"
-        value={description}
-        onChange={(event) => setDescription(event.target.value)}
-      />
+      <div className="form-group">
+        <label>Data Limite:</label>
 
-      <select
-        value={priority}
-        onChange={(event) => setPriority(event.target.value)}
-      >
-        <option value="Baixa">Baixa</option>
-        <option value="Média">Média</option>
-        <option value="Alta">Alta</option>
-      </select>
+        <input
+          type="date"
+          value={data}
+          onChange={(event) => setData(event.target.value)}
+          required
+        />
+      </div>
 
-      <button type="submit">
-        Adicionar tarefa
+      <div className="form-group">
+        <label>Descrição:</label>
+
+        <textarea
+          value={descricao}
+          onChange={(event) => setDescricao(event.target.value)}
+          placeholder="Detalhes técnicos da tarefa..."
+        />
+      </div>
+
+      <div className="form-group">
+        <label>Nível de Prioridade:</label>
+
+        <select
+          value={prioridade}
+          onChange={(event) => setPrioridade(event.target.value)}
+        >
+          <option value="Baixa">Baixa</option>
+          <option value="Média">Média</option>
+          <option value="Alta">Alta</option>
+        </select>
+      </div>
+
+      <button type="submit" className="btn-primary">
+        Cadastrar Tarefa
       </button>
     </form>
   );

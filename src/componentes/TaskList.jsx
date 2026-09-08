@@ -1,15 +1,14 @@
-import TaskItem from "./TaskItem";
+import TaskItem from './TaskItem';
 
 function TaskList({ tasks, onToggleTask, onDeleteTask }) {
   return (
-    <section className="task-list">
-      <h2>Minhas tarefas</h2>
-
+    <div className="task-list">
       {tasks.length === 0 ? (
-        <p className="empty-message">
+        <p className="empty-msg">
           Nenhuma tarefa encontrada.
         </p>
       ) : (
+        // map() percorre a lista e cria um componente para cada tarefa
         tasks.map((task) => (
           <TaskItem
             key={task.id}
@@ -19,7 +18,7 @@ function TaskList({ tasks, onToggleTask, onDeleteTask }) {
           />
         ))
       )}
-    </section>
+    </div>
   );
 }
 

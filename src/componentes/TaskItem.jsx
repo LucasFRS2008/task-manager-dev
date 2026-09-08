@@ -1,8 +1,10 @@
-```jsx
 function TaskItem({ task, onToggleTask, onDeleteTask }) {
   return (
-    <div className={`task-item ${task.concluida ? 'completed' : ''}`}>
-      
+    <div
+      className={`task-item ${
+        task.concluida ? 'completed' : ''
+      }`}
+    >
       <div className="task-info">
         <h3>{task.nome}</h3>
 
@@ -14,7 +16,9 @@ function TaskItem({ task, onToggleTask, onDeleteTask }) {
           {task.descricao}
         </p>
 
-        <span className={`priority ${task.prioridade.toLowerCase()}`}>
+        <span
+          className={`priority ${task.prioridade.toLowerCase()}`}
+        >
           Prioridade: {task.prioridade}
         </span>
       </div>
@@ -34,10 +38,8 @@ function TaskItem({ task, onToggleTask, onDeleteTask }) {
           Remover
         </button>
       </div>
-
     </div>
   );
 }
 
 export default TaskItem;
-```
