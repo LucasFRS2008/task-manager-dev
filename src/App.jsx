@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 
-import TaskForm from './components/TaskForm';
-import TaskFilter from './components/TaskFilter';
-import TaskList from './components/TaskList';
+import TaskForm from './componentes/TaskForm';
+import TaskFilter from './componentes/TaskFilter';
+import TaskList from './componentes/TaskList';
 
 function App() {
   // Hook useState: controla a lista de tarefas
